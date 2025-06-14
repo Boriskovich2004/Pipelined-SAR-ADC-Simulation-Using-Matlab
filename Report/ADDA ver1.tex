@@ -422,33 +422,176 @@ gain error）, 第一级 SAR ADC 电容失配（capacitor-DAC mismatch），比�
 	\subsection{仿真结果}
 	在本节中，我们将展示基于上述模型和参数在不同情况下的仿真结果，包括静态参数和动态参数的测试结果。
 	\subsubsection{理想情况}
-	在没有任何失配、失调等情况下，我们可以得到理想的ADC性能。可以看到最差DNL为
+	在没有任何失配、失调等情况下，我们可以得到理想的ADC性能。可以看到最差DNL为0.59LSB，最差INL为0.78LSB，SNR为80.01dB，SNDR为80.01dB，SFDR为82dB，THD为105.12dB，ENOB为13bit。
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{pic\ideal\DFT.png}
+			\includegraphics[width=0.7\textwidth]{pic/ideal/DFT.png}
 			\caption{理想情况下的动态特性} 
 		\end{figure}
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{pic\ideal\DNL.png}
+			\includegraphics[width=0.7\textwidth]{pic/ideal/DNL.png}
 			\caption{理想情况下的DNL} 
 		\end{figure}
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{pic\ideal\INL.png}
+			\includegraphics[width=0.7\textwidth]{pic/ideal/INL.png}
 			\caption{理想情况下的INL} 
 		\end{figure}
 
 		\begin{figure}[H]
 			\centering
-			\includegraphics[width=0.7\textwidth]{pic\ideal\inout.png}
+			\includegraphics[width=0.7\textwidth]{pic/ideal/inout.png}
 			\caption{理想情况下的输入输出对比} 
 		\end{figure}
 
+	\subsubsection{TI mismatch}
+	\begin{itemize}
+		\item \textbf{失调失配} 设置四个通道各自有$Mis_{OS} = 0.5 * LSB * randn()$；此时ADC性能。可以看到最差DNL为1LSB，最差INL为1.2LSB，SNR为78.52dB，SNDR为78.52dB，SFDR为83.9dB，THD为126.97dB，ENOB为12.75bit。
 
-		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/TIOS/DFT.png}
+			\caption{通道内存在失调失配下的动态特性} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/TIOS/DNL.png}
+			\caption{通道内存在失调失配下的DNL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/TIOS/INL.png}
+			\caption{通道内存在失调失配下的INL} 
+		\end{figure}
+
+		\item \textbf{增益失配} 设置四个通道各自有$Mis_{Gain} = 1 + 0.2 * randn()$；
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/TIG/DFT.png}
+			\caption{通道内存在增益失配下的动态特性} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/TIG/DNL.png}
+			\caption{通道内存在增益失配下的DNL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/TIG/INL.png}
+			\caption{通道内存在增益失配下的INL} 
+		\end{figure}
+
+		\item \textbf{时钟偏差} 设置四个通道各自有$Mis_{Clk} = 0.005 * 1/fs * randn()$；
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/TIC/DFT.png}
+			\caption{通道间存在时钟偏差下的动态特性} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/TIC/DNL.png}
+			\caption{通道间存在时钟偏差下的DNL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/TIC/INL.png}
+			\caption{通道间存在时钟偏差下的INL} 
+		\end{figure}
+	\end{itemize}
+
+	\subsubsection{pipelined-SAR ADC级间运放误差}
+	\begin{itemize}
+		\item \textbf{有限增益误差（级间增益误差）} 级间增益误差可以通过改变级间增益放大器的开环增益来实现，当开环增益非正无穷时，级间增益为理想的$2^6=64$。将开环增益改为60dB，实际级间增益为$\frac{1000}{1+1000*\frac{1}{2^6}}=60.15$。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Av/DFT.png}
+			\caption{有限增益误差下的动态特性} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Av/DNL.png}
+			\caption{有限增益误差下的DNL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Av/INL.png}
+			\caption{有限增益误差下的INL} 
+		\end{figure}
+
+		\item \textbf{有限带宽误差} 理想情况时级间增益放大器的带宽为$10GHz$，现将带宽设置为为$2GHz$。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/GBW/DFT.png}
+			\caption{有限带宽误差下的动态特性} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/GBW/DNL.png}
+			\caption{有限带宽误差下的DNL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/GBW/INL.png}
+			\caption{有限带宽误差下的INL} 
+		\end{figure}
+
+		\item \textbf{运放噪声与失调} 将失调调为0.001V，噪声设置为$0.001V*randn()$。？？？理论来说如此小的失调应该会被冗余遮盖
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Avno/DFT.png}
+			\caption{存在运放噪声与失调时的动态特性} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Avno/DNL.png}
+			\caption{存在运放噪声与失调时的DNL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Avno/INL.png}
+			\caption{存在运放噪声与失调时的INL} 
+		\end{figure}
+
+	\end{itemize}
+
+\subsubsection{SAR ADC非理想}
+	\begin{itemize}
+		\item \textbf{比较器失调与噪声} 将失调调为0.005V，噪声设置为$0.005V*randn()$。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Comno/DFT.png}
+			\caption{存在比较器失调与噪声的动态特性} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Comno/DNL.png}
+			\caption{存在比较器失调与噪声的DNL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Comno/INL.png}
+			\caption{存在比较器失调与噪声的INL} 
+		\end{figure}
+	
+	\end{itemize}
+
 %============= 参考文献 =====================
 % \addcontentsline{toc}{section}{参考文献}
 % \bibliography{bibfile}
