@@ -344,19 +344,62 @@ gain error）, 第一级 SAR ADC 电容失配（capacitor-DAC mismatch），比�
 		\underline{\textbf{带宽失配未在本模型中加以考虑，只是在此做一个简单的说明}}
 		
 		\subsection{时间交织失配误差总结}
-\begin{flushleft}
-			\begin{tabular}{|l|l|l|}
-			\hline \textbf{Type of mismatch} & \textbf{Effect on input} & \textbf{Spur location} \\
-			\hline Offset mismatch & Additive effect & $f_{\text {IL }}=\frac{k}{M} f_s$ \\
-			\hline Gain mismatch & Amplitude modulation & $f_{\text {IL }}= \pm f_{\text {in }}+\frac{k}{M} f_s$ \\
-			\hline Timing mismatch & Phase modulation & $f_{\text {IL }}= \pm f_{\text {in }}+\frac{k}{M} f_s$ \\
-			\hline Bandwidth mismatch & Freq.-dependent amplitude and phase modulation & $f_{I L}= \pm f_{\text {in }}+\frac{k}{M} f_s$ \\
-			\hline
-		\end{tabular}
-\end{flushleft}
+		\begin{flushleft}
+					\begin{tabular}{|l|l|l|}
+					\hline \textbf{Type of mismatch} & \textbf{Effect on input} & \textbf{Spur location} \\
+					\hline Offset mismatch & Additive effect & $f_{\text {IL }}=\frac{k}{M} f_s$ \\
+					\hline Gain mismatch & Amplitude modulation & $f_{\text {IL }}= \pm f_{\text {in }}+\frac{k}{M} f_s$ \\
+					\hline Timing mismatch & Phase modulation & $f_{\text {IL }}= \pm f_{\text {in }}+\frac{k}{M} f_s$ \\
+					\hline Bandwidth mismatch & Freq.-dependent amplitude and phase modulation & $f_{I L}= \pm f_{\text {in }}+\frac{k}{M} f_s$ \\
+					\hline
+				\end{tabular}
+		\end{flushleft}
 		
+\section{MATLAB建模和仿真}
+	\subsection{模型介绍}
+	整体模型仿照硬件的结构进行搭建，主要包括以下几个部分：
+	\begin{itemize}
+		\item 顶层模型：
+		实现整个时钟交织流水线SAR ADC的功能仿真。定义了ADC的整体参数和可能的噪声和失配，并生成测试用的正弦信号。
+		ADC整体采用差分结构，因此需要生成两个共模相同，差模相反的正弦信号。
+		模型首先对信号进行时钟交织的采样，采样时考虑了多通道间的时钟失配、增益失配、偏移量和kT/C噪声，将这些非理想因素叠加到输入信号中；
+		接着调用多个流水线SAR ADC对多路采样数据进行并行化处理，考虑到了流水线ADC的各种噪声和失配，具体的因素会在每个模块中介绍；
+		最后使用多路选择器将各个通道的量化结果整合得到更高采样率的量化结果。
 		
+		\item 流水线SAR ADC模型函数：
+		实现流水线SAR ADC的功能仿真，以函数的形式被顶层模型调用。采用了两级流水的结构，并设置1位冗余位。
+		考虑到噪声和失真的影响，采用了6位/8位的分布，使得最终的ENOB可以达到12位的设计要求。
 
+		模型内部首先根据两级SAR ADC的位数求出两级所需要的电容值，并生成相应的电容阵列，电容阵列考虑到了寄生电容和电容大小失配。
+		需要注意的是，第一级的余差在比较完成后还需要进一步缩小余差传递到第二级，
+		而第二级的最后的余差在比较完成后不需要进一步处理，因此两级SAR ADC的实现方式有所不同，需要的电容数量也有所不同。
+		具体而言，如果两级SAR ADC分别为N1位和N2位，则第一级SAR ADC的电容阵列需要N1+1个电容，而第二级SAR ADC的电容阵列只需要N2个电容。
+		
+		两级SAR ADC之间由一个余差放大器连接，使用反馈的形式控制余差的放大，将放大后的结果作为第二级SAR ADC的输入。
+
+		最终的结果由两级SAR ADC的输出拼接得到。计算时将两级的冗余位重叠相加，并减去固定的偏移量得到最终的量化结果，输出到顶层模块进行多路整合。
+
+		\item SAR ADC模型函数：
+		模型的工作过程仿照SAR ADC的工作原理，使用循环模拟逐次逼近的过程，每次循环对输入的差分信号进行比较，并进行相应调整，考虑了比较器的失调和噪声。
+		两级SAR ADC由于之前提到的原因，存在一些差别，需要分别设计。
+		第一级ADC的电容阵列需要N1+1个电容，第二级ADC的电容阵列只需要N2个电容，并且第一级对输出余差电压的调整次数也比第二级多一次。其余部分两级完全相同。
+
+		\item ResAmp模型函数：
+		余差放大器将两个输入信号按照闭环增益进行放大，根据放大器的增益带宽积进行滤波后输出到第二级SAR ADC进行处理。
+		输入的信号叠加了放大器的噪声和失调，闭环增益的计算也包含了有限增益带来的非线性因素。
+
+		\item 静态参数测试函数
+		实现对ADC静态参数的测试，包括DNL、INL指标的计算。由于输入是正弦信号，理想的histogram并不是均匀分布，而是呈“浴盆状”的分布曲线。
+		函数通过使用大量数据模拟得到理想的概率分布，再用实际得到的概率分布与理想分布相减得到DNL，对DNL积分得到INL。
+
+		\item 动态参数测试函数
+		实现对ADC动态参数的测试，包括SNR、SFDR、THD、SNDR和ENOB指标的计算。函数通过对输入的正弦信号进行FFT变换，得到频谱图，
+		去除DC分量后找到能量最大的频率作为主频，将主频乘以整数倍的频率作为谐波，取2-5次谐波进行计算。
+		计算主频和谐波的功率比得到THD，将2次谐波功率与主频功率的比得到SFDR。
+		去除DC、主频和谐波后，计算剩余部分的功率就是噪声功率，主频功率与噪声功率之比就是SNR。
+		主频功率比上噪声功率与谐波功率之和就是SNDR，由此可以计算出ENOB。由于各种噪声和失真，ENOB小于最初设计的13位，但仍然满足12位的要求。
+
+	\end{itemize}
 
 
 		
