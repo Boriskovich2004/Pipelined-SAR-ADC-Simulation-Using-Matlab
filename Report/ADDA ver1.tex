@@ -1,0 +1,372 @@
+\documentclass[cs4size,a4paper]{ctexart}   
+%==================== 数学符号公式 ============
+\usepackage{amsmath}                 % AMS LaTeX宏包
+\usepackage[style=1]{mdframed}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}                % 英文花体字体
+\usepackage{bm}                      % 数学公式中的黑斜体
+\usepackage{bbding,manfnt}           % 一些图标，如 \dbend
+\usepackage{lettrine}                % 首字下沉，命令\lettrine
+\def\attention{\lettrine[lines=2,lraise=0,nindent=0em]{\large\textdbend\hspace{1mm}}{}}
+\usepackage{longtable}
+\usepackage[toc,page]{appendix}
+\usepackage{geometry}                % 页边距调整
+\usepackage{makecell}                % 表格内换行
+\geometry{top=3.0cm,bottom=2.7cm,left=2.5cm,right=2.5cm}
+%====================公式按章编号==========================
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
+%================= 基本格式预置 ===========================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}  
+\fancyhead[C]{\zihao{5}  \kaishu fancyhead千万别忘改了}
+\fancyfoot[C]{~\zihao{5} \thepage~}
+\renewcommand{\headrulewidth}{0.65pt} 
+% \CTEXsetup[format={\centering\bfseries\zihao{-2}},name={第, 章}]{section}
+\CTEXsetup[format={\centering\bfseries\zihao{4}}]{section}
+\CTEXsetup[format={\bfseries \zihao{4}}]{subsection}
+\CTEXsetup[format={\bfseries \zihao{-4}}]{subsubsection}
+%================== 图形支持宏包 =========================
+\usepackage{subfig}
+\usepackage{graphicx}                % 嵌入png图像
+\usepackage{color,xcolor}            % 支持彩色文本、底色、文本框等
+\usepackage{hyperref}                % 交叉引用
+\usepackage{caption}
+\captionsetup{figurewithin=section}
+%==================== 源码和流程图 =====================
+\usepackage{listings}                % 粘贴源代码
+\usepackage{xcolor}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+ \usepackage{xcolor}
+
+% \renewcommand{\lstlistingname}{代码}    % 代码标题样式修改无效？！
+%  \lstset{
+%     basicstyle          =   \sffamily,          % 基本代码风格
+%     keywordstyle        =   \bfseries,          % 关键字风格
+%     commentstyle        =   \rmfamily\itshape,  % 注释的风格，斜体
+%     stringstyle         =   \ttfamily,  % 字符串风格
+%     flexiblecolumns,                % 别问为什么，加上这个
+%     numbers             =   left,   % 行号的位置在左边
+%     showspaces          =   false,  % 是否显示空格，显示了有点乱，所以不现实了
+%     numberstyle         =   \zihao{5}\ttfamily,    % 行号的样式，小五号，tt等宽字体
+%     showstringspaces    =   false,
+%     captionpos          =   t,      % 这段代码的名字所呈现的位置，t指的是top上面
+%     frame               =   lrtb,   % 显示边框
+% }
+
+%  \lstdefinestyle{SPICE}{
+%     language        =   matlab, % 语言选Python
+%     basicstyle      =   \zihao{-5}\ttfamily,
+%     numberstyle     =   \zihao{-5}\ttfamily,
+%     keywordstyle    =   \color{blue},
+%     keywordstyle    =   [2] \color{teal},
+%     stringstyle     =   \color{magenta},
+%     commentstyle    =   \color{red}\ttfamily,
+%     breaklines      =   true,   % 自动换行，建议不要写太长的行
+%     columns         =   fixed,  % 如果不加这一句，字间距就不固定，很丑，必须加
+%     basewidth       =   0.5em,
+% }
+
+%--------------------
+\hypersetup{hidelinks}
+\usepackage{booktabs}  
+\usepackage{shorttoc}
+\usepackage{tabu,tikz}
+\usepackage{float}
+
+\usepackage{multirow}
+
+
+
+\tabcolsep=1ex
+\tabulinesep=\tabcolsep
+\newlength\tikzboxwidth
+\newlength\tikzboxheight
+\newcommand\tikzbox[1]{%
+        \settowidth\tikzboxwidth{#1}%
+        \settoheight\tikzboxheight{#1}%
+        \begin{tikzpicture}
+        \path[use as bounding box]
+                (-0.5\tikzboxwidth,-0.5\tikzboxheight)rectangle
+                (0.5\tikzboxwidth,0.5\tikzboxheight);
+        \node[inner sep=\tabcolsep+0.5\arrayrulewidth,line width=0.5mm,draw=black]
+                at(0,0){#1};
+        \end{tikzpicture}%
+        }
+
+\makeatletter
+\def\hlinew#1{%
+  \noalign{\ifnum0=`}\fi\hrule \@height #1 \futurelet
+   \reserved@a\@xhline}
+   
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}%
+
+\usepackage{subfig}
+
+\usepackage{CJK}
+\usepackage{ifthen}
+
+
+\usepackage{graphicx} 
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\newtheorem{Theorem}{定理}
+\newtheorem{Lemma}{引理} 
+%%使得公式随章节自动编号
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
+\renewcommand{\theequation}{\arabic{section}.\arabic{equation}}
+
+%-------------------------
+	
+\usepackage{pythonhighlight}
+\usepackage{tikz}                    
+\usepackage{tikz-3dplot}
+\usetikzlibrary{shapes,arrows,positioning}
+%===================   正文开始    ===================
+\begin{document}
+\bibliographystyle{gbt7714-2005}     %论文引用格式
+%===================  定理类环境定义 ===================
+\newtheorem{example}{例}              % 整体编号
+\newtheorem{algorithm}{算法}
+\newtheorem{theorem}{定理}            % 按 section 编号
+\newtheorem{definition}{定义}
+\newtheorem{axiom}{公理}
+\newtheorem{property}{性质}
+\newtheorem{proposition}{命题}
+\newtheorem{lemma}{引理}
+\newtheorem{corollary}{推论}
+\newtheorem{remark}{注解}
+\newtheorem{condition}{条件}
+\newtheorem{conclusion}{结论}
+\newtheorem{assumption}{假设}
+%==================重定义 ===================
+\renewcommand{\contentsname}{目录}     
+\renewcommand{\abstractname}{摘要} 
+\renewcommand{\refname}{参考文献}     
+\renewcommand{\indexname}{索引}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\appendixname}{附录}
+\renewcommand{\proofname}{证明}
+\renewcommand{\algorithm}{算法} 
+%============== 封皮和前言 =================
+% \input{body/cover}
+\pagestyle{plain}
+\pagenumbering{arabic}
+% \include{body/abstract}
+\pagestyle{empty}
+% \tableofcontents 
+% \thispagestyle{empty}
+%============== 论文正文   =================
+% \pagestyle{fancy}
+\pagestyle{plain}
+% \include{body/chapter1}      %
+% \include{body/chapter2}
+% \include{body/chapter3}
+% \include{body/chapter4}
+% \include{body/chapter5}
+% \include{body/chapter6}
+
+\begin{center}
+    \textsc{\zihao{-3} \bfseries ADDA课程项目}\\[0.3cm]
+\end{center}
+
+\begin{center}
+	组员：冯俊杰、贾梓越、陈江华、陈畅
+\end{center}
+
+\section{设计目标}
+\noindent
+研究内容：
+
+通过 matlab 建模或者 cadence（MOS 管级/verilogA 级，工艺不限）构建一个时钟交
+织 Pipelined-SAR ADC，pipelined 级数不限，时钟校准通道数≥4 条，精度≥12 位，
+TI-ADC 总采样率≥2GS/s，自己手动添加以下误差和失配，例如采样时钟 jitter 范围
+100fs~5ps，timing skew 范围 200fs~5ps, inter-stage gain error± 10%等（以上参
+数仅供参考）, 通过静态分析方法和动态分析方法分析：TI mismatch (gain mismatch,
+offset mismatch and timing skew), pipelined-SAR ADC 级间增益误差（inter-stage 
+gain error）, 第一级 SAR ADC 电容失配（capacitor-DAC mismatch），比较器失调，
+时钟 jitter 等的影响。选择一种 time skew 校准方法进行 timing skew 误差检测并分
+析。建模、仿真验证、撰写完整分析报告，在 cadence 里面完成仿真验证的有额外 bonus
+分数。
+
+\noindent
+分析方法：
+
+静态特性分析：转移特性曲线/统计方法；动态特性分析：FFT
+
+\section{电路结构及原理}
+
+    \subsection{Pipeline SAR ADC建模原理}
+        基本架构：如图\ref{fig:circuit1}所示，两级SAR级间插入一个余量放大器。
+        	\begin{figure}[H]
+        		\centering
+        		\includegraphics[width=0.5\textwidth]{figure/circuit1.jpg}
+        		\caption{pipeline级联原理图} \label{fig:circuit1}
+        	\end{figure}
+        	
+        总位数为
+            \begin{equation}
+                N=N_1+N_2+...-R
+            \end{equation}
+            
+        N为总位数，其中R为冗余位。
+        
+        \textbf{\textit{在设计时需要注意以下几点：}}
+        \begin{itemize}
+			\item \textbf{时序设计基本原则：}$fs=1/Ts$,其中$Ts = min\{Ts_1,Ts_2,...\}$，由于采样率取决于最慢的周期，设计时尽量让每级周期近似相等，避免时序浪费。
+			\item \textbf{余量传输：}如图\ref{fig:circuit2}所示，正常需要将数字量经过DAC转回模拟域，但考虑SAR采用电容开关阵列，可以加一位电容，利用SAR本身开关阵列实现DAC，得到余差。即纯SAR ADC的开关阵列正常需要N-2位电容，但若要利用电容开关阵列实现DAC功能，应当考虑N-1位电容，这就造成了前后级的结构不同，因为最后一级只需实现纯SAR ADC，无需再转换回模拟域。
+				\begin{figure}[H]
+					\centering
+					\includegraphics[width=0.7\textwidth]{figure/circuit2.jpg}
+					\caption{余量放大传输原理图} \label{fig:circuit2}
+				\end{figure}
+			以2级流水线为例，若第一级M1位，第二级M2位，则实际第一级的ADC需要M1-1位电容，而第二即只需要M2-2位电容。
+			\item \textbf{放大倍数：}
+				\begin{equation}
+					G=2^{M1-R-K}=2^{M1-R}\cdot\frac{Vref2}{Vref1}
+				\end{equation}
+			M1为前级ADC的位数。
+			
+			R为冗余位的位数——引入冗余的目的是为了采用冗余位校正算法来校正比较器失调和DAC建立误差，同时也能降低系统对比较器噪声的要求。
+			
+			k为两级间的缩减系数——例如第一级量化范围为$[0,Vref]$，第二级量化范围就可以表示为$[0,2^{-k} \cdot Vref]$，可以转化为两级参考电压之比。
+			
+			\item \textbf{冗余：}希望超出量化范围的信息也可以被后级SAR ADC量化。
+			
+			具体实现：余量放大器倍数减半并保持第二级SAR ADC量化范围不变，就可以实现1位冗余校正。
+			
+			模拟域和数字域对应:前级最高位和次级首位对齐，并减去失调。
+			
+			\item \textbf{运放误差：}运放非理想，实际情况需要考虑以下几方面的误差
+				\begin{itemize}
+					\item 有限增益误差
+					\item 有限带宽误差
+					\item 噪声和失调
+				\end{itemize}
+			
+        \end{itemize}
+
+
+    \subsection{Time-Interleaved ADC 建模原理}
+		基本架构：如图\ref{fig:circuit3}所示，多路时间交织可以将等效采样率提高到但通道的m倍。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=1\textwidth]{figure/circuit3.png}
+			\caption{时间交织原理及时序图} \label{fig:circuit3}
+		\end{figure}
+		\noindent
+		\textbf{\textit{同样，注意建模设计要点：不同的通道间误差及其各自与频谱的对应关系}}
+		在此，我们会首先回顾课上以两通道为例的失配，再将其推广到多通道，并研究不同通道间误差与频谱各自的对应关系。
+
+		\subsubsection{失调失配}
+		\textbf{以2通道为例，输入为 $x(t) = \cos(\omega t + \phi)$}
+		\begin{itemize}
+			\item \textbf{失调失配}：$x(t) = \cos(\omega t + \phi) + OS$
+			\begin{itemize}
+				\item 存在\textcolor{red}{失调}失配，$\Delta OS = OS_A - OS_B \neq 0$
+				\item 量化结果：
+				\[
+				y[n] = \cos(\omega nT + \phi) + OS + \frac{\Delta OS}{2} \cos\left(\frac{\omega_s}{2} nT \right)
+				\]
+			\end{itemize}
+		\end{itemize}
+		\underline{\textbf{接下来，推广到多通道失调失配：}}
+		\begin{equation}
+			\begin{gathered}
+				x_s(t)=x(t)+O(t)\\
+				 \quad f_{I L}=k f_s / M \quad \text { where } k=0,1,2,3 \ldots, M-1 \\
+				P_N=\frac{1}{M} \sum_{i=0}^{M-1}\left|O_i\right|^2
+			\end{gathered}
+		\end{equation}
+		
+		
+		
+		\subsubsection{增益失配}
+		\textbf{增益失配}：$x(t) = G \cdot \cos(\omega t + \phi)$
+		\begin{itemize}
+			\item 存在\textcolor{red}{增益}失配，$\Delta G = G_A - G_B \neq 0$
+			\item 量化结果：
+			\[
+			y[n] = G \cos(\omega nT + \phi) + \frac{\Delta G}{2} \cos\left[ \left(\omega - \frac{\omega_s}{2} \right) nT + \phi \right]
+			\]
+		\end{itemize}
+		\underline{\textbf{接下来，推广到多通道增益失配：}}
+		\begin{equation}
+			\begin{gathered}
+				x_s(t)=x(t) \times G(t) \\
+				 f_{\text {Gain }} =k f_s / M \\
+				f_{\text {IL }}=f_{\text {Gain }} \pm f_{\text {in }}= \pm f_{\text {in }}+\frac{k}{M} f_s \\
+				 P_{\text {Total }}  =\frac{1}{2 M} \sum_{i=0}^{M-1}\left|G_i\right|^2
+			\end{gathered}
+		\end{equation}
+		
+		\subsubsection{时钟偏差}
+		\textbf{采样时刻偏差}：$x(t) = \cos(\omega t + \phi + \Delta T)$
+		\begin{itemize}
+			\item 存在\textcolor{red}{采样时刻偏差}，$\Delta T$
+			\item 量化结果：
+			\[
+			y[n] = \cos\left(\frac{\omega \Delta T}{2}\right) \cos(\omega nT + \phi) + \sin\left(\frac{\omega \Delta T}{2}\right) \sin\left[\left(\omega - \frac{\omega_s}{2} \right) nT + \phi \right]
+			\]
+		\end{itemize}
+		\underline{\textbf{接下来，推广到多通道采样时刻偏差：}}
+		\begin{equation}
+			\begin{array}{lr}
+				x_s(t)=x(t-\delta t) & x_s(t)=\sin \left(2 \pi f_{i n} t\right) \cos \left(2 \pi f_{i n} \delta t\right)-\cos \left(2 \pi f_{i n} t\right) \sin \left(2 \pi f_{i n} \delta t\right) \\
+				x(t)=\sin \left(2 \pi f_{i n} t\right) & x_s(t) \cong \sin \left(2 \pi f_{i n} t\right)-\left(2 \pi f_{i n} \delta t\right) \cos \left(2 \pi f_{i n} t\right) \\
+				x_s(t)=\sin \left(2 \pi f_{i n} t-2 \pi f_{i n} \delta t \right) & f_{I L}= \pm f_{i n}+f_{\delta t}= \pm f_{i n}+\frac{k}{M} f_s \nonumber
+			\end{array}
+		\end{equation}
+		
+		\begin{equation}
+			P_N=\frac{\left(2 \pi f_{i n}\right)^2}{2 M} \sum_{i=0}^{M-1}\left|\delta t_i\right|^2
+		\end{equation}
+		
+		
+		\subsubsection{带宽失配（但这个在本模型中未体现）}
+		\textbf{带宽失配}：$x(t) = H(\omega) \cdot \cos(\omega t + \phi)$
+		\begin{itemize}
+			\item 存在\textcolor{red}{带宽}失配，$\Delta H(\omega) = H_A(\omega) - H_B(\omega) \neq 0$
+			\item 量化结果：
+			\[
+			y[n] = H(\omega) \cos(\omega nT + \phi) + \frac{\Delta H(\omega)}{2} \cos\left[\left( \omega - \frac{\omega_s}{2} \right) nT + \phi \right]
+			\]
+		\end{itemize}
+		\underline{\textbf{带宽失配未在本模型中加以考虑，只是在此做一个简单的说明}}
+		
+		\subsection{时间交织失配误差总结}
+\begin{flushleft}
+			\begin{tabular}{|l|l|l|}
+			\hline \textbf{Type of mismatch} & \textbf{Effect on input} & \textbf{Spur location} \\
+			\hline Offset mismatch & Additive effect & $f_{\text {IL }}=\frac{k}{M} f_s$ \\
+			\hline Gain mismatch & Amplitude modulation & $f_{\text {IL }}= \pm f_{\text {in }}+\frac{k}{M} f_s$ \\
+			\hline Timing mismatch & Phase modulation & $f_{\text {IL }}= \pm f_{\text {in }}+\frac{k}{M} f_s$ \\
+			\hline Bandwidth mismatch & Freq.-dependent amplitude and phase modulation & $f_{I L}= \pm f_{\text {in }}+\frac{k}{M} f_s$ \\
+			\hline
+		\end{tabular}
+\end{flushleft}
+		
+		
+
+
+
+		
+%============= 参考文献 =====================
+% \addcontentsline{toc}{section}{参考文献}
+% \bibliography{bibfile}
+\clearpage
+%=============  致谢  ======================
+% \include{body/acknowledge}
+%\include{body/appendices}
+
+\end{document}
+%%%%%%%%%% 结束 %%%%%%%%%%
