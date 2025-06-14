@@ -52,7 +52,7 @@ ENOB = (SNDR - 1.76) / 6.02;
 % === 绘图 ===
 if En_plot
     figure('Name', 'SAR ADC Dynamic FFT Spectrum');
-    plot(f_axis / 1e6, Y_dB, 'b'); grid on; hold on;
+    plot(f_axis / 1e6, Y_dB, 'b'); grid on; hold on;ylim([-200, 50]);
     plot(f_axis(fund_idx) / 1e6, Y_dB(fund_idx), 'ro', 'LineWidth', 1.5);
     text(f_axis(fund_idx)/1e6, Y_dB(fund_idx) + 3, ...
         sprintf('Peak @ %.2f MHz', fund_freq / 1e6), 'FontSize', 10);

@@ -8,7 +8,7 @@ close all;
 N1 = 6;          % stage1 SAR
 N2 = 8;          % stage2 SAR
 N = N1 + N2 - 1; % resolution (one bit redundancy)
-fs = 100e6; % Sample Rate(MHz)
+fs = 200e7; % Sample Rate(MHz)
 ts = 1/(fs);
 Vref = 1.8; % Reference Voltage
 Vcm = Vref/2; % Common Mode Voltage
@@ -51,17 +51,14 @@ T = 000;            % Temperature (K)
 fs_sub = fs / n_ch;    % Sub ADC Sample Rate
 ts_sub = 1 / (fs_sub); % Sub ADC Sample Cycle
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1
 %%%%%%%%%%%%% input signal %%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 num = 2^15;            % Sample Points
 Nsample = num;         % FFT Points
 Vfs = Vref;            % Input Signal Full Sacle Voltage
-fin = 1431 / num * fs; % Input Signal Freq
+fin = 1517 / num * fs; % Input Signal Freq
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%% TI ADC Work Process %%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % different channel sample
 t         = zeros(n_ch, floor(num/n_ch)); % ts_sub = n_ch*ts
 Vin_p_chs = zeros(n_ch, floor(num/n_ch));
@@ -87,6 +84,9 @@ C_tot_p1 = sum(C_act_p1) + Cp_p1; % Positive Plate Total Cap With Parasitic Cap
 C_tot_n1 = sum(C_act_n1) + Cp_n1; % Positive Plate Total Cap With Parasitic Cap
 % ---------------------------------------------------------- %
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% TI ADC Work Process %%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 for i = 1 : n_ch
     % t = ts * [i : n_ch : num]    e.g.[i:4:8]->[[1,5],[2,6],[3,7],[4,8]]
     t(i,:) = [ts*i : ts_sub : floor(num/n_ch)*ts_sub] + Mis_TS(i).*ones(1,floor(num/n_ch));
@@ -155,7 +155,7 @@ Vout = Dout(1 : Nsample) .* Vref / 2^N;
 % Plot Voltage Reconstructed From Output Codes
 Show_Input = 1; % Show Input Signals? 0 : No, 1 : Yes
 windowL_OUT = 0; % Left Boundary of Plot Window (us)
-windowR_OUT = 2; % Right Boundary of Plot Window (us)
+windowR_OUT = 0.2; % Right Boundary of Plot Window (us)
 plot_Vout_Voltage(Vout, Vin_p_tot, Nsample, fs, windowL_OUT, windowR_OUT, Show_Input);
 
 % Test and Plot Static & Dynamic Features

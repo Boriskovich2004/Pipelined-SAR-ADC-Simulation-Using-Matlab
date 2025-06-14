@@ -400,6 +400,52 @@ gain error）, 第一级 SAR ADC 电容失配（capacitor-DAC mismatch），比�
 		主频功率比上噪声功率与谐波功率之和就是SNDR，由此可以计算出ENOB。由于各种噪声和失真，ENOB小于最初设计的13位，但仍然满足12位的要求。
 
 	\end{itemize}
+	\subsection{仿真参数}
+	在本节中，我们将对上述模型进行仿真，主要关注以下几个方面的参数设置：
+	\subsubsection{模型参数}
+	\begin{itemize}
+		\item \textbf{采样频率}：$f_s = 2 \text{GHz}$
+		\item \textbf{参考电压幅度}：$V_{ref} = 1.8V$
+		\item \textbf{共模电压}：$V_{cm} = 0.9V$
+		\item \textbf{ADC位数}：$N = 13$，这是ADC的理想位数。
+		\item \textbf{通道数}：$M = 4$，这是时间交织ADC的通道数。
+		\item \textbf{非理想指标}：包括时钟jitter、增益失配、偏移失调等，这些参数将在仿真中逐步调整。
+	\end{itemize}
+
+	\subsubsection{采样与输入信号参数}
+	\begin{itemize}
+		\item \textbf{采样点数}：$num = 2^{15}$，这是整个ADC的采样点数。由于理想位数为13位，为了完整测量，采样了$2^{15}$，无法采样更多是因为matlab内存不允许。
+		\item \textbf{输入信号频率}：$f_{in} = \frac{1517}{num} * fs$，未超过奈奎斯特频率，且与采样频率$f_s$互质，以免DNL测量出现-1。同时采样$num$点正好是整周期，可以不进行加窗。
+		\item \textbf{输入信号幅度}：$V_{in} = 1.0$，这是输入正弦信号的幅度。
+	\end{itemize}
+
+	\subsection{仿真结果}
+	在本节中，我们将展示基于上述模型和参数在不同情况下的仿真结果，包括静态参数和动态参数的测试结果。
+	\subsubsection{理想情况}
+	在没有任何失配、失调等情况下，我们可以得到理想的ADC性能。可以看到最差DNL为
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic\ideal\DFT.png}
+			\caption{理想情况下的动态特性} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic\ideal\DNL.png}
+			\caption{理想情况下的DNL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic\ideal\INL.png}
+			\caption{理想情况下的INL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic\ideal\inout.png}
+			\caption{理想情况下的输入输出对比} 
+		\end{figure}
 
 
 		
