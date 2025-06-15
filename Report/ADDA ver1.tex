@@ -589,8 +589,104 @@ gain error）, 第一级 SAR ADC 电容失配（capacitor-DAC mismatch），比�
 			\includegraphics[width=0.7\textwidth]{pic/Comno/INL.png}
 			\caption{存在比较器失调与噪声的INL} 
 		\end{figure}
-	
+
+		\item \textbf{寄生电容} 先将第一级的寄生电容调为$Cp_{p1}  = 5fF $、$ Cp_{n1} = 5fF;$ 
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Co/DFT1.png}
+			\caption{第一级寄生电容的动态特性} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Co/DNL1.png}
+			\caption{第一级寄生电容的DNL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Co/INL1.png}
+			\caption{第一级寄生电容的INL} 
+		\end{figure}
+
+		再将第二级的寄生电容调为$Cp_{p2}  = 5fF $、$ Cp_{n2} = 5fF;$
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Co/DFT2.png}
+			\caption{第二级寄生电容的动态特性}
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Co/DNL2.png}
+			\caption{第二级寄生电容的DNL}
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/Co/INL2.png}
+			\caption{第二级寄生电容的INL}
+		\end{figure}
+
+		\item \textbf{电阻热噪声} 测量T=300k时的电阻热噪声
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/KT/DFT.png}
+			\caption{电阻热噪声的动态特性} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/KT/DNL.png}
+			\caption{电阻热噪声的DNL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/KT/INL.png}
+			\caption{电阻热噪声的INL} 
+		\end{figure}
 	\end{itemize}
+
+
+\subsubsection{所有非理想叠加}
+$Mis_{OS} = 0.5 * LSB * randn()$；
+
+$Mis_{Gain} = 1 + 0.2 * randn()$；
+
+$Mis_{Clk} = 0.005 * 1/fs * randn()$；
+
+实际级间增益为60.15；
+
+带宽设置为为$2GHz$；
+
+运放失调调为0.001V，噪声设置为$0.001V*randn()$；
+
+比较器失调调为0.005V，噪声设置为$0.005V*randn()$；
+
+第一级的寄生电容调为$Cp_{p1}  = 5fF $、$ Cp_{n1} = 5fF;$ 
+
+第二级的寄生电容调为$Cp_{p2}  = 5fF $、$ Cp_{n2} = 5fF;$ 
+
+T=300k时的电阻热噪声。
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/noideal/DFT.png}
+			\caption{全都非理想时的动态特性} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/noideal/DNL.png}
+			\caption{全都非理想时的DNL} 
+		\end{figure}
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{pic/noideal/INL.png}
+			\caption{全都非理想时的INL} 
+		\end{figure}
+
 
 %============= 参考文献 =====================
 % \addcontentsline{toc}{section}{参考文献}
