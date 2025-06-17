@@ -7,7 +7,8 @@ function [DNLmax, DNLmin, INLmax, INLmin] = Static_test_ramp(code, Nbit)
     code(code > 2 ^ Nbit - 1) = 2 ^ Nbit - 1;
 
     % 获取待测 ADC 的直方图
-    [counts, ~] = histcounts(code, 0:2 ^ Nbit);
+    % [counts, ~] = histcounts(code, 0:2 ^ Nbit);
+    [counts, ~] = histcounts(code, -0.5:1:(2^Nbit - 0.5));
     M = sum(counts); % 总采样点数
 
     % === 使用斜坡输入生成 ideal_counts === %
@@ -16,6 +17,11 @@ function [DNLmax, DNLmin, INLmax, INLmin] = Static_test_ramp(code, Nbit)
     % === DNL 和 INL 计算 === %
     DNL = (counts - ideal_counts) ./ ideal_counts;
     INL = cumsum(DNL);
+    
+    % 对 INL 做线性趋势修正（Best-fit line removal）
+    codes = 0:(2^Nbit - 1);
+    p = polyfit(codes, INL, 1);         % 拟合一阶线性
+    INL = INL - polyval(p, codes);      % 去除线性项
 
     fprintf('INL at code 0     = %.2f LSB\n', INL(1));
     fprintf('INL at code end   = %.2f LSB\n', INL(end));
