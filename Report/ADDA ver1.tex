@@ -345,6 +345,8 @@ gain error）, 第一级 SAR ADC 电容失配（capacitor-DAC mismatch），比�
 		
 		\subsection{时间交织失配误差总结}
 		\begin{flushleft}
+			\begin{table}[H]
+					\caption{时间交织失配误差总结}
 					\begin{tabular}{|l|l|l|}
 					\hline \textbf{Type of mismatch} & \textbf{Effect on input} & \textbf{Spur location} \\
 					\hline Offset mismatch & Additive effect & $f_{\text {IL }}=\frac{k}{M} f_s$ \\
@@ -353,7 +355,85 @@ gain error）, 第一级 SAR ADC 电容失配（capacitor-DAC mismatch），比�
 					\hline Bandwidth mismatch & Freq.-dependent amplitude and phase modulation & $f_{I L}= \pm f_{\text {in }}+\frac{k}{M} f_s$ \\
 					\hline
 				\end{tabular}
+			\end{table}
 		\end{flushleft}
+		
+		\subsection{关于电荷重分配}
+			如图\ref{fig:cap}所示，采用电荷重分配结构。图中得到的参考电压可以表示为
+			\begin{equation}
+				V_{\text {out }}=\frac{\sum_{i=0}^{B-1} b_i 2^i C}{2^B C+C_P} V_{\text {ref }}
+			\end{equation}
+			
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=1\textwidth]{figure/cap.png}
+				\caption{电荷重分配基本结构} \label{fig:cap}
+			\end{figure}
+			
+			\subsubsection{基本原理}
+			\begin{itemize}
+				\item 电荷重分配是逐次逼近型 ADC 中常用的 DAC 实现方式。
+				\item 利用一组按二进制权重排列的电容阵列，通过切换其下极板的连接（Vref/GND）来实现数字码控制下的输出电压。
+				\item 工作过程基于电荷守恒定律，上极板节点浮空，依赖电荷转移来建立目标电压。
+			\end{itemize}
+			
+			\subsubsection{工作阶段}
+			\begin{enumerate}
+				\item \textbf{采样阶段（Sampling）}：
+				\begin{itemize}
+					\item 所有电容上下极板接地，或使用顶极板采样（Flip-around结构）。
+					\item 输入信号通过开关加载到电容阵列上。
+				\end{itemize}
+				\item \textbf{保持阶段（Hold）}：
+				\begin{itemize}
+					\item 上极板节点浮空，下极板根据比较结果逐位切换。
+					\item 每一次切换后输出电压会逼近目标值的一半。
+				\end{itemize}
+			\end{enumerate}
+			
+			\subsubsection{设计注意事项}
+			\begin{itemize}
+				\item 上极板寄生电容 $C_p$ 影响输出精度，若与输出电压有关会造成非线性。
+				\item 使用桥接电容可减小电容总数（但本次课程设计中未采用）。
+				\item 可引入冗余设计以修正高位误差。
+			\end{itemize}
+		
+		\subsection{关于差分结构}
+		注意：本课程设计采用差分结构，如图\ref{fig:diff}所示。
+			\begin{figure}[H]
+				\centering
+				\includegraphics[width=0.6\textwidth]{figure/diff.png}
+				\caption{差分结构flip-around图} \label{fig:diff}
+			\end{figure}
+		
+		
+			\subsubsection{结构特点}
+			\begin{itemize}
+				\item 利用一对对称电路分别处理正负输入信号，输出差分信号。
+				\item 能有效抑制共模干扰、offset 电压、时钟跳变电荷注入等问题。
+			\end{itemize}
+			
+			\subsubsection{在 Flip-Around T/H 中的应用}
+			\begin{itemize}
+				\item 差分结构配合电荷翻转采样（Flip-Around）结构，能抵消底极板开关注入误差。
+				\item 差分结构中反馈因子为 1，增益为 1，简化了运放需求。
+				\item 若采用开环复位，需注意信号共模在跟踪与保持相位的一致性。
+			\end{itemize}
+			
+			\subsubsection{非理想性考虑}
+			\begin{itemize}
+				\item \textbf{开环增益}：有限增益造成误差 $V_{OUT} = \frac{V_{IN}}{1 + A^{-1}}$。
+				\item \textbf{失调电压 $V_{OS}$}：导致输出恒定偏移 $V_{OUT} = V_{IN} + V_{OS}$。
+				\item \textbf{寄生电容 $C_P$}：若恒定，可视为增益误差；若非恒定则引入非线性。
+			\end{itemize}
+			
+			\subsubsection{扩展应用}
+			\begin{itemize}
+				\item \textbf{T/H + 放大}：通过电荷重分配结构实现电压增益，增益由电容比 $C_1/C_2$ 决定。
+				\item \textbf{T/H + 求差或求和}：通过多个电容节点在跟踪和保持相位切换实现差分计算。
+				\item 差分结构能推广至所有上述电路，并可通过精密电容匹配提高精度。
+			\end{itemize}
+			
 		
 \section{MATLAB建模和仿真}
 	\subsection{模型介绍}

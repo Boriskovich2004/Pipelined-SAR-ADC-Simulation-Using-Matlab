@@ -1,4 +1,4 @@
-function [DNLmax, DNLmin, INLmax, INLmin] = Static_test(code, Nbit)
+function [DNLmax, DNLmin, INLmax, INLmin] = Static_test_ramp(code, Nbit)
     % 使用理想斜坡输入进行静态测试计算 DNL / INL 并保存图像
 
     % 限制输出码范围
