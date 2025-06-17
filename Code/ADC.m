@@ -17,8 +17,8 @@ n_ch = 4; % number of channel
 
 %%%%%%%%%% Mismatch & noise %%%%%%%%%%%
 % Inter-Channel Mismatch
-Mis_OS = 000 * LSB * randn(1,n_ch);       % Inter-channel Offset
-Mis_Gain = 1 + 000 * LSB * randn(1,n_ch); % Inter-channel Gain Mismatch
+Mis_OS = 0.00 * LSB * randn(1,n_ch);       % Inter-channel Offset
+Mis_Gain = 1 + 00.2 * LSB * randn(1,n_ch); % Inter-channel Gain Mismatch
 Mis_TS = 0.00 * 1/fs * randn(1, n_ch);    % Inter-channel Clock Jitter
 
 % SAR Capacitor Mismatch
@@ -250,7 +250,7 @@ for i = 1 : n_ch
 end
 Vout = Dout(1 : Nsample) .* Vref / 2^N;
 
-% Test and Plot Static & Dynamic Features
-En_plot = 1; % Plot? ,0 : No, 1 : Yes
-wid = 0; % Add Window? 0 : No, 1 : hamming, 2 : hann
-[THD, SFDR, SNR, SNDR, ENOB] = Dynamic_test(Dout', fs, Nsample, En_plot, wid); % Dynamic Performance
+% % Test and Plot Static & Dynamic Features
+% En_plot = 1; % Plot? ,0 : No, 1 : Yes
+% wid = 0; % Add Window? 0 : No, 1 : hamming, 2 : hann
+% [THD, SFDR, SNR, SNDR, ENOB] = Dynamic_test(Dout', fs, Nsample, En_plot, wid); % Dynamic Performance
