@@ -1,6 +1,6 @@
 function [DNLmax, DNLmin, INLmax, INLmin] = Static_test_ramp(code, Nbit)
     % 使用理想斜坡输入进行静态测试计算 DNL / INL 并保存图像
-
+    
     % 限制输出码范围
     code = round(code);
     code(code < 0) = 0;
@@ -16,12 +16,12 @@ function [DNLmax, DNLmin, INLmax, INLmin] = Static_test_ramp(code, Nbit)
 
     % === DNL 和 INL 计算 === %
     DNL = (counts - ideal_counts) ./ ideal_counts;
-    INL_raw = cumsum(DNL);
-
-    % === 强制 INL 首尾为 0 的线性趋势移除 === %
-    N = length(INL_raw);
-    linear_trend = linspace(INL_raw(1), INL_raw(end), N);  % 从 INL(1) 到 INL(end) 的直线
-    INL = INL_raw - linear_trend;  
+    INL = cumsum(DNL);
+    % 
+    % % === 强制 INL 首尾为 0 的线性趋势移除 === %
+    % N = length(INL_raw);
+    % linear_trend = linspace(INL_raw(1), INL_raw(end), N);  % 从 INL(1) 到 INL(end) 的直线
+    % INL = INL_raw - linear_trend;  
 
     fprintf('INL at code 0     = %.2f LSB\n', INL(1));
     fprintf('INL at code end   = %.2f LSB\n', INL(end));

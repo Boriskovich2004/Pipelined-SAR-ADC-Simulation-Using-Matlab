@@ -5,8 +5,8 @@ close all;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% ADC Parameter %%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-N1 = 7;          % stage1 SAR
-N2 = 9;          % stage2 SAR
+N1 = 6;          % stage1 SAR
+N2 = 8;          % stage2 SAR
 N = N1 + N2 - 1; % resolution (one bit redundancy)
 fs = 200e7; % Sample Rate(MHz)
 ts = 1/(fs);
@@ -18,12 +18,12 @@ n_ch = 4; % number of channel
 %%%%%%%%%% Mismatch & noise %%%%%%%%%%%
 % Inter-Channel Mismatch
 Mis_OS = 0.00 * LSB * randn(1,n_ch);       % Inter-channel Offset
-Mis_Gain = 1 + 00.2 * LSB * randn(1,n_ch); % Inter-channel Gain Mismatch
+Mis_Gain = 1 + 0.00 * LSB * randn(1,n_ch); % Inter-channel Gain Mismatch
 Mis_TS = 0.00 * 1/fs * randn(1, n_ch);    % Inter-channel Clock Jitter
 
 % SAR Capacitor Mismatch
 sigmaC = 0.00;    % Global Capacitor Mismatch
-Cp_p1  = 000e-15; % Stage1 Positive Plate Parasitic Capacitor (F)
+Cp_p1  = 001e-15; % Stage1 Positive Plate Parasitic Capacitor (F)
 Cp_n1  = 000e-15; % Stage1 Negative Plate Parasitic Capacitor (F)
 Cp_p2  = 000e-15; % Stage2 Positive Plate Parasitic Capacitor (F)
 Cp_n2  = 000e-15; % Stage2 Negative Plate Parasitic Capacitor (F)
@@ -170,15 +170,21 @@ for i = 1 : n_ch
     end
 end
 Vout = Dout(1 : Nsample) .* Vref / 2^N;
+VN = length(Vout);
+vout_linear_trend = linspace(Vout(1) - 0, Vout(end) - Vref + Vref / 2^N, VN);
+Vout_aligned = Vout - vout_linear_trend;
+Dout_aligned = Vout_aligned ./ (Vref / 2^N);
+figure(3)
+plot((1:VN), Dout_aligned);
 
 % Plot Voltage Reconstructed From Output Codes
 Show_Input = 1; % Show Input Signals? 0 : No, 1 : Yes
 windowL_OUT = 0; % Left Boundary of Plot Window (us)
-windowR_OUT = 0.2; % Right Boundary of Plot Window (us)
-plot_Vout_Voltage(Vout, Vin_p_tot, Nsample, fs, windowL_OUT, windowR_OUT, Show_Input);
+windowR_OUT = 2; % Right Boundary of Plot Window (us)
+plot_Vout_Voltage(Vout_aligned, Vin_p_tot, Nsample, fs, windowL_OUT, windowR_OUT, Show_Input);
 
 % Test and Plot Static Features
-[DNLmax, DNLmin, INLmax, INLmin] = Static_test_ramp(Dout', N); % Static Performance
+[DNLmax, DNLmin, INLmax, INLmin] = Static_test_ramp(Dout_aligned', N); % Static Performance
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% TI ADC Work Process %%%%%%%%%%%
