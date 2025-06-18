@@ -99,18 +99,27 @@ Vin_n_chs = zeros(n_ch, floor(num / n_ch));
 t = (0:num-1) * ts; % ts: 通道间隔采样时间
 t_sam = zeros(n_ch, floor(num / n_ch));  % 每个子 ADC 对应采样时间
 
+for j = 1:floor(num / n_ch)
+    for i = 1:n_ch
+        t_sam(i,j) = t((j-1)*n_ch+i);
+    end
+end
+
 % 构造每通道输入含误差的 Vin_p/Vin_n
 for i = 1:n_ch
-    for j = 1:floor(num / n_ch)
-        idx = i + n_ch * (j - 1);       % 当前总输入索引
-        t_sam(i, j) = t(idx);           % 对应采样时间
-
-        norm_ramp = (2 * t_sam(i,j) / ((num - 1) * ts)) - 1;  % 归一化 [-1, 1]
-
-        % 差分信号含误差
-        Vin_p_chs(i, j) = Vref/2 + Mis_Gain(i)*(Vfs/2)*norm_ramp + Mis_OS(i) + sqrt(k*T/C_tot_p1)*randn();
-        Vin_n_chs(i, j) = Vref/2 - Mis_Gain(i)*(Vfs/2)*norm_ramp             + sqrt(k*T/C_tot_n1)*randn();
-    end
+    Vin_p_chs(i,:) = Vref/2 + Mis_Gain(i).*(Vfs/2)*sin(2*pi*fin*t_sam(i,:)) + Mis_OS(i) + sqrt(k*T/C_tot_p1)*randn(1,floor(num/n_ch));
+    Vin_n_chs(i,:) = Vref/2 - Mis_Gain(i).*(Vfs/2)*sin(2*pi*fin*t_sam(i,:))             + sqrt(k*T/C_tot_n1)*randn(1,floor(num/n_ch));
+   
+   %  for j = 1:floor(num / n_ch)
+   %      idx = i + n_ch * (j - 1);       % 当前总输入索引
+   %      t_sam(i, j) = t(idx);           % 对应采样时间
+   % 
+   %      norm_ramp = (2 * t_sam(i,j) / ((num - 1) * ts)) - 1;  % 归一化 [-1, 1]
+   % 
+   %      % 差分信号含误差
+   %      Vin_p_chs(i, j) = Vref/2 + Mis_Gain(i)*(Vfs/2)*norm_ramp + Mis_OS(i) + sqrt(k*T/C_tot_p1)*randn();
+   %      Vin_n_chs(i, j) = Vref/2 - Mis_Gain(i)*(Vfs/2)*norm_ramp             + sqrt(k*T/C_tot_n1)*randn();
+   % end
 end
 
 % concat signals of different channels
