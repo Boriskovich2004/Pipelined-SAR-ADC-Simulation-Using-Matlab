@@ -66,8 +66,8 @@ fin = 1431 / num * fs; % Input Signal Freq
 t         = zeros(n_ch, floor(num/n_ch)); % ts_sub = n_ch*ts
 Vin_p_chs = zeros(n_ch, floor(num/n_ch));
 Vin_n_chs = zeros(n_ch, floor(num/n_ch));
-Vin_p_tot = zeros(num);
-Vin_n_tot = zeros(num);
+Vin_p_tot = zeros(1,num);
+Vin_n_tot = zeros(1,num);
 
 % ------ calculate total capacitor of stage1 SAR ADC ------- %
 Cu1 = 20e-15; % ADC1 Unit Cap (F)
