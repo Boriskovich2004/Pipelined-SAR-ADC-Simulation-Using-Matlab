@@ -89,7 +89,7 @@ function [max_dnl, min_dnl, max_inl,min_inl] = INL_zj(code,Nc,Na,Nb,k)
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %%%%%%%%%%% figure plot %%%%%%%%%%%%%%%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    figure(k);
+    figure;
     subplot (2,1,1);
     plot (dnl(Na:length(dnl)-Nb),'b');
     %abc = gcf;
