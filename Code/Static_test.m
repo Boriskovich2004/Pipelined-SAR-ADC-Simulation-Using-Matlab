@@ -53,7 +53,7 @@ function [DNLmax, DNLmin, INLmax, INLmin] = Static_test(code, Nbit)
 % ylabel('INL (LSB)');
 % title('INL (Cumulative)');
 % grid on;
-[DNLmax, DNLmin, INLmax, INLmin] = INL_zj(code, 0, 0, 0, 1);
+[DNLmax, DNLmin, INLmax, INLmin] = INL_zj(code, 0, 1, 0, 1);
 
 end
 
