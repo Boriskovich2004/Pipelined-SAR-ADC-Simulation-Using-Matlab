@@ -578,7 +578,7 @@ gain error）, 第一级 SAR ADC 电容失配（capacitor-DAC mismatch），比�
 			\caption{通道内存在失调失配下的INL} 
 		\end{figure}
 
-		\item \textbf{增益失配} 设置四个通道各自有$Mis_{Gain} = 1 + 0.2 * randn()$；此时ADC性能。可以看到最差DNL为0.989LSB，最差INL为1.07LSB，SNR为91.4dB，SNDR为91.4dB，SFDR为101.82dB，THD为145.5dB，ENOB为14.89bit。
+		\item \textbf{增益失配} 设置四个通道各自有$Mis_{Gain} = 1 + 0.2 * LSB * randn()$；此时ADC性能。可以看到最差DNL为0.989LSB，最差INL为1.07LSB，SNR为91.4dB，SNDR为91.4dB，SFDR为101.82dB，THD为145.5dB，ENOB为14.89bit。
 		
 		可以从DFT图中看到明显的谐波失真。四通道的失真出现频率难以推导。DNL整体较为平稳，只有最后变为-0.989LSB，接近失码。
 		\begin{figure}[H]
@@ -821,7 +821,7 @@ gain error）, 第一级 SAR ADC 电容失配（capacitor-DAC mismatch），比�
 \subsubsection{所有非理想叠加}
 $Mis_{OS} = 0.5 * LSB * randn()$；
 
-$Mis_{Gain} = 1 + 0.2 * randn()$；
+$Mis_{Gain} = 1 + 0.2 * LSB * randn()$；
 
 $Mis_{Clk} = 0.05 * 1/fs * randn()$；
 
@@ -894,7 +894,7 @@ jitter=100ps。
 		\section{Timing skew 校正}
 		\subsection{时间校正方法一}
 		\noindent
-		本节,我们对 TI-ADC 各通道的采样时钟偏差（timing skew）进行校正，减小其对 SNR、SNDR、SFDR 的影响，提高 ENOB。
+		本节,我们对 TI-ADC 各通道的采样时钟偏差（timing skew）进行校正，减小其对 SNR、SNDR、SFDR 的影响，提高 ENOB。由于15位时采样点数过大，matlab仿真耗时较长，因此在验证校正方法阶段我们采用13位，采样点数设置为215，并暂时忽略其他非理想因素。我们总共选取了两种方案进行验证，在理想情况下，两者都能实现比较良好的校正效果。但在实际部署中，考虑其他非理想因素后，我们最终只保留了第一种方法作为最终方案。
 		
 		\noindent
 		\textbf{校正方法：}基于均值绝对差的后台校正
@@ -1349,6 +1349,86 @@ end
 		\end{figure}
 		
 		\underline{可以看到，最佳迭代次数大概为150次，即只需要方法一所需时间的一半就能完成校正。}
+
+		\subsection{全部非理想因素叠加时的时钟校正}
+
+		下面我们在完整的15位ADC（1bit冗余），并考虑所有非理想因素情况下进行时钟校正，验证时钟校正的最终效果。采样率取$2^22$，非理想因素相应参数见3.3.6。timing skew方差大小为$\frac{0.05*1}{fs}$，迭代步长为$\frac{0.05*1}_{fs*10}$。
+
+		\subsubsection{方法一校正效果}
+
+		校正前后，动态分析、静态分析的对比如图：
+
+			\begin{figure}[H]
+				\centering
+				\begin{minipage}{0.49\linewidth}
+					\centering
+					\includegraphics[width=0.9\linewidth]{figure/MAD_FFT1.png}
+				\end{minipage}
+				\begin{minipage}{0.49\linewidth}
+					\centering
+					\includegraphics[width=0.9\linewidth]{figure/MAD_FFT2.png}
+				\end{minipage}
+				\caption{方法一校正与无校正DFT对比图} 
+			\end{figure}
+
+			\begin{figure}[H]
+				\centering
+				\begin{minipage}{0.49\linewidth}
+					\centering
+					\includegraphics[width=0.9\linewidth]{figure/MAD_DNL1.png}
+				\end{minipage}
+				\begin{minipage}{0.49\linewidth}
+					\centering
+					\includegraphics[width=0.9\linewidth]{figure/MAD_DNL2.png}
+				\end{minipage}
+				\caption{方法一校正与无校正DNL、INL对比图} 
+			\end{figure}
+			各通道残差的收敛情况如下，可以看到大致在40次迭代后收敛。
+
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{figure/shoulianquxian.png}
+			\caption{收敛曲线} 
+		\end{figure}
+
+			经检验，方法一大约能将ENOB提升至13bit，所需平均迭代次数大约为30次。若再减小步长并提高迭代次数，ENOB提升不明显（受限于其他非理想因素）。
+
+		\subsubsection{方法二校正效果}
+
+		校正前后，动态分析对比如图：
+
+			\begin{figure}[H]
+				\centering
+				\begin{minipage}{0.49\linewidth}
+					\centering
+					\includegraphics[width=0.9\linewidth]{figure/COR_FFT1.png}
+				\end{minipage}
+				\begin{minipage}{0.49\linewidth}
+					\centering
+					\includegraphics[width=0.9\linewidth]{figure/COR_FFT2.png}
+				\end{minipage}
+				\caption{方法二校正与无校正DFT对比图} 
+			\end{figure}
+			该结果证明，方法二在考虑其他非理想性的叠加后，误差过大，达不到精度要求。因此本次项目最终采取方法一作为时钟校正方法。
+
+		\subsubsection{最终校正结果}
+			最终我们选取基于均值绝对差的校正方法，并综合考虑精度和速度的权衡，选择步长为时钟偏差方差大小的十分之一，大约可在30次迭代内完成校正，校正效果如下：
+
+		\begin{table}[H]
+			\caption{矫正前后静态/动态参数指标统计}
+			\resizebox{\linewidth}{!}{
+			\begin{tabular}{|c|c|c|c|c|c|c|c|}
+				\hline
+				\textbf{}        & \textbf{DNL(LSB)} & \textbf{INL(LSB)} & \textbf{SNR(dB)} & \textbf{SDNR(dB)} & \textbf{SFDR(dB)} & \textbf{THD(dB)} & \textbf{ENOB(bit)} \\ \hline
+				\textbf{无校正}      & 1.3           & 5.38           & 77.07           & 77.07            & 83.04           & 142.92          & 12.51                 \\ \hline
+				\textbf{方法一校正} & 1.29            & 5.28           & 80.46            & 80.46             & 94.19           & 140.82           & 13.07             \\ \hline
+				\textbf{方法二校正} & 1.26           & 5.26           & 74.83          & 74.83            & 80.83            & 142.56           & 12.14             \\ \hline
+			\end{tabular}
+			}
+		\end{table}
+
+		由于测试使用randn，并不能很好地控制其他非理想因素，所以方法二看起来是“负优化”，实际上应该是能优化的。结合三个数据可以发现，变化的指标是SNR和SFDR,INL与DNL变化不明显。这与改善通道间的Timing Skew是相符的。
+
 \newpage
 		\section{项目感想与需要注意的点}
 		\subsection{时间校正方法的选取}
@@ -1421,9 +1501,6 @@ end
 			对于在数字域提取误差、在模拟域进行校正的时序偏差校正技术而言，最终的校准精度受数字模块和模拟模块的共同影响。其中，模拟精度主要体现在可调延迟线的调节步长上，更小的步长意味着更精确的收敛域，但也增加了需要的迭代次数；而数字精度的影响则更为复杂。直观来看，通过增加平均采样的数量可以提升数字域的精度；但与此同时，这也会导致收敛速度下降。而校正方法也是影响进度的关键因素。采用单次只校正一个通道的方法能确保最高的校正精度，但大大增加了迭代次数；而多通道同时校正的方法虽然存在更大的误差，却能确保一定的校正速度，且不容易随通道数的变化而改变。总的来说，数字校准系统存在一个根本性的权衡关系：即校准精度与收敛速度之间的矛盾。
 			
 		\end{itemize}
-		
-		
-		
 		
 		
 \clearpage
