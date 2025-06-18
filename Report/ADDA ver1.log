@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.27)  18 JUN 2025 16:54
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.27)  18 JUN 2025 17:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1207,4 +1207,288 @@ Package newfloat Info: `float' package detected.
 \c@definition=\count400
 \c@axiom=\count401
 \c@property=\count402
-\c@propos
+\c@proposition=\count403
+\c@lemma=\count404
+\c@corollary=\count405
+\c@remark=\count406
+\c@condition=\count407
+\c@conclusion=\count408
+\c@assumption=\count409
+
+
+LaTeX Font Warning: Font shape `TU/lmr/bx/sc' undefined
+(Font)              using `TU/lmr/bx/n' instead on input line 193.
+
+
+LaTeX Font Warning: Font shape `TU/SimSun(0)/b/sc' undefined
+(Font)              using `TU/SimSun(0)/b/n' instead on input line 193.
+
+[1
+
+] (./ADDA ver1.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (f:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (f:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 3.
+ (f:/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+) [2])
+\tf@toc=\write5
+\openout5 = `"ADDA ver1.toc"'.
+
+ [3]
+Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:mapping=tex-text;!
+[4]
+File: figure/circuit1.jpg Graphic file (type bmp)
+<figure/circuit1.jpg>
+
+
+LaTeX Font Warning: Font shape `TU/SimSun(0)/b/it' undefined
+(Font)              using `TU/SimSun(0)/b/n' instead on input line 247.
+
+File: figure/circuit2.jpg Graphic file (type bmp)
+<figure/circuit2.jpg>
+[5]
+File: figure/circuit3.png Graphic file (type bmp)
+<figure/circuit3.png>
+ [6] [7]
+Overfull \hbox (16.87532pt too wide) detected at line 352
+[][][][]
+ []
+
+
+Overfull \hbox (40.05408pt too wide) in paragraph at lines 374--382
+[][] 
+ []
+
+[8]
+File: figure/cap.png Graphic file (type bmp)
+<figure/cap.png>
+ [9]
+File: figure/diff.png Graphic file (type bmp)
+<figure/diff.png>
+ [10] [11] [12] [13]
+File: pic/ideal/DFT.png Graphic file (type bmp)
+<pic/ideal/DFT.png>
+File: pic/ideal/DNL.png Graphic file (type bmp)
+<pic/ideal/DNL.png>
+ [14]
+File: pic/ideal/INL.png Graphic file (type bmp)
+<pic/ideal/INL.png>
+File: pic/ideal/inout.png Graphic file (type bmp)
+<pic/ideal/inout.png>
+ [15]
+File: pic/TIOS/DFT.png Graphic file (type bmp)
+<pic/TIOS/DFT.png>
+File: pic/TIOS/DNL.png Graphic file (type bmp)
+<pic/TIOS/DNL.png>
+File: pic/TIOS/INL.png Graphic file (type bmp)
+<pic/TIOS/INL.png>
+ [16]
+File: pic/TIG/DFT.png Graphic file (type bmp)
+<pic/TIG/DFT.png>
+File: pic/TIG/DNL.png Graphic file (type bmp)
+<pic/TIG/DNL.png>
+ [17]
+File: pic/TIG/INL.png Graphic file (type bmp)
+<pic/TIG/INL.png>
+File: pic/TIC/DFT.png Graphic file (type bmp)
+<pic/TIC/DFT.png>
+ [18]
+File: pic/TIC/DNL.png Graphic file (type bmp)
+<pic/TIC/DNL.png>
+File: pic/TIC/INL.png Graphic file (type bmp)
+<pic/TIC/INL.png>
+ [19]
+File: pic/Av/DFT.png Graphic file (type bmp)
+<pic/Av/DFT.png>
+File: pic/Av/DNL.png Graphic file (type bmp)
+<pic/Av/DNL.png>
+File: pic/Av/INL.png Graphic file (type bmp)
+<pic/Av/INL.png>
+ [20]
+File: pic/GBW/DFT.png Graphic file (type bmp)
+<pic/GBW/DFT.png>
+File: pic/GBW/DNL.png Graphic file (type bmp)
+<pic/GBW/DNL.png>
+ [21]
+File: pic/GBW/INL.png Graphic file (type bmp)
+<pic/GBW/INL.png>
+File: pic/Avno/DFT.png Graphic file (type bmp)
+<pic/Avno/DFT.png>
+ [22]
+File: pic/Avno/DNL.png Graphic file (type bmp)
+<pic/Avno/DNL.png>
+File: pic/Avno/INL.png Graphic file (type bmp)
+<pic/Avno/INL.png>
+ [23]
+File: pic/Comno/DFT.png Graphic file (type bmp)
+<pic/Comno/DFT.png>
+File: pic/Comno/DNL.png Graphic file (type bmp)
+<pic/Comno/DNL.png>
+File: pic/Comno/INL.png Graphic file (type bmp)
+<pic/Comno/INL.png>
+ [24]
+File: pic/Co/DFT1.png Graphic file (type bmp)
+<pic/Co/DFT1.png>
+File: pic/Co/DNL1.png Graphic file (type bmp)
+<pic/Co/DNL1.png>
+ [25]
+File: pic/Co/INL1.png Graphic file (type bmp)
+<pic/Co/INL1.png>
+File: pic/Co/DFT2.png Graphic file (type bmp)
+<pic/Co/DFT2.png>
+ [26]
+File: pic/Co/DNL2.png Graphic file (type bmp)
+<pic/Co/DNL2.png>
+File: pic/Co/INL2.png Graphic file (type bmp)
+<pic/Co/INL2.png>
+ [27]
+File: pic/KT/DFT.png Graphic file (type bmp)
+<pic/KT/DFT.png>
+File: pic/KT/DNL.png Graphic file (type bmp)
+<pic/KT/DNL.png>
+File: pic/KT/INL.png Graphic file (type bmp)
+<pic/KT/INL.png>
+ [28]
+File: pic/jitter/DFT.png Graphic file (type bmp)
+<pic/jitter/DFT.png>
+File: pic/jitter/DNL.png Graphic file (type bmp)
+<pic/jitter/DNL.png>
+ [29]
+File: pic/jitter/INL.png Graphic file (type bmp)
+<pic/jitter/INL.png>
+File: pic/noideal/DFT.png Graphic file (type bmp)
+<pic/noideal/DFT.png>
+ [30]
+File: pic/noideal/DNL.png Graphic file (type bmp)
+<pic/noideal/DNL.png>
+File: pic/noideal/INL.png Graphic file (type bmp)
+<pic/noideal/INL.png>
+ [31] [32]
+File: figure/ti1.png Graphic file (type bmp)
+<figure/ti1.png>
+ [33] [34]
+File: figure/ti2.png Graphic file (type bmp)
+<figure/ti2.png>
+ [35] (f:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+)
+Overfull \hbox (16.92398pt too wide) in paragraph at lines 1047--1048
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (2.46985pt too wide) in paragraph at lines 1059--1060
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[36]
+Overfull \hbox (2.46985pt too wide) in paragraph at lines 1065--1066
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (2.46985pt too wide) in paragraph at lines 1068--1069
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+File: figure/result1.png Graphic file (type bmp)
+<figure/result1.png>
+File: figure/result2.png Graphic file (type bmp)
+<figure/result2.png>
+File: figure/result3.png Graphic file (type bmp)
+<figure/result3.png>
+File: figure/result4.png Graphic file (type bmp)
+<figure/result4.png>
+[37]
+File: figure/result5.png Graphic file (type bmp)
+<figure/result5.png>
+ [38]
+File: figure/result6.png Graphic file (type bmp)
+<figure/result6.png>
+ [39]
+File: figure/cor1.png Graphic file (type bmp)
+<figure/cor1.png>
+ [40]
+Overfull \hbox (45.83224pt too wide) in paragraph at lines 1247--1248
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.60518pt too wide) in paragraph at lines 1249--1250
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[41]
+File: figure/cor2.png Graphic file (type bmp)
+<figure/cor2.png>
+ [42]
+File: figure/cor3.png Graphic file (type bmp)
+<figure/cor3.png>
+File: figure/cor4.png Graphic file (type bmp)
+<figure/cor4.png>
+File: figure/cor6.png Graphic file (type bmp)
+<figure/cor6.png>
+ [43]
+Overfull \hbox (40.0703pt too wide) in paragraph at lines 1351--1352
+[]$[]$ 
+ []
+
+File: figure/MAD_FFT1.png Graphic file (type bmp)
+<figure/MAD_FFT1.png>
+File: figure/MAD_FFT2.png Graphic file (type bmp)
+<figure/MAD_FFT2.png>
+File: figure/MAD_DNL1.png Graphic file (type bmp)
+<figure/MAD_DNL1.png>
+File: figure/MAD_DNL2.png Graphic file (type bmp)
+<figure/MAD_DNL2.png>
+[44]
+File: figure/shoulianquxian.png Graphic file (type bmp)
+<figure/shoulianquxian.png>
+File: figure/COR_FFT1.png Graphic file (type bmp)
+<figure/COR_FFT1.png>
+File: figure/COR_FFT2.png Graphic file (type bmp)
+<figure/COR_FFT2.png>
+ [45] [46] [47]
+File: figure/feeling1.png Graphic file (type bmp)
+<figure/feeling1.png>
+
+Missing character: There is no ′ (U+2032) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ (U+200B) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ′ (U+2032) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ (U+200B) in font [lmroman12-regular]:mapping=tex-text;!
+[48]
+File: figure/feeling2.png Graphic file (type bmp)
+<figure/feeling2.png>
+ [49] [50
+
+] (./ADDA ver1.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2022/08/05>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package rerunfilecheck Info: File `"ADDA ver1".out' has not changed.
+(rerunfilecheck)             Checksum: <no file>.
+ ) 
+Here is how much of TeX's memory you used:
+ 36540 strings out of 474773
+ 790267 string characters out of 5761289
+ 1971842 words of memory out of 5000000
+ 57998 multiletter control sequences out of 15000+600000
+ 568182 words of font info for 95 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 93i,13n,97p,1277b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on ADDA ver1.pdf (50 pages).

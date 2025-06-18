@@ -1,0 +1,50 @@
+\contentsline {section}{\numberline {1}设计目标}{4}{section.1}%
+\contentsline {section}{\numberline {2}电路结构及原理}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Pipeline SAR ADC建模原理}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Time-Interleaved ADC 建模原理}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}失调失配}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}增益失配}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}时钟偏差}{8}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}带宽失配（但这个在本模型中未体现）}{8}{subsubsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.3}时间交织失配误差总结}{8}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}关于电荷重分配}{9}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}基本原理}{9}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}工作阶段}{9}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}设计注意事项}{10}{subsubsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.5}关于差分结构}{10}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}结构特点}{10}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}在 Flip-Around T/H 中的应用}{10}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}非理想性考虑}{11}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.4}扩展应用}{11}{subsubsection.2.5.4}%
+\contentsline {section}{\numberline {3}MATLAB建模和仿真}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}模型介绍}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}仿真参数}{13}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}模型参数}{13}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}采样与输入信号参数}{13}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}仿真结果}{14}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}理想情况}{14}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}TI mismatch}{16}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}pipelined-SAR ADC级间运放误差}{20}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}SAR ADC非理想}{24}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}系统影响}{28}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}所有非理想叠加}{30}{subsubsection.3.3.6}%
+\contentsline {section}{\numberline {4}Timing skew 校正}{33}{section.4}%
+\contentsline {subsection}{\numberline {4.1}时间校正方法一}{33}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}校正原理}{33}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}四通道校正}{35}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}MATLAB 实现代码（节选）}{36}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.4}校正效果分析}{37}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.5}迭代次数分析}{39}{subsubsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.2}时间校正方法二：基于自相关函数的校正}{40}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}校正原理}{40}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}MATLAB 实现代码}{41}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}校正结果}{42}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}迭代次数分析}{43}{subsubsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.3}全部非理想因素叠加时的时钟校正}{44}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}方法一校正效果}{44}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}方法二校正效果}{45}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}最终校正结果}{46}{subsubsection.4.3.3}%
+\contentsline {section}{\numberline {5}项目感想与需要注意的点}{47}{section.5}%
+\contentsline {subsection}{\numberline {5.1}时间校正方法的选取}{47}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}项目过程中需要注意的点}{47}{subsection.5.2}%
+\contentsline {section}{参考文献}{50}{figure.caption.67}%
