@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.27)  18 JUN 2025 14:16
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.27)  18 JUN 2025 14:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1358,53 +1358,45 @@ File: pic/KT/DNL.png Graphic file (type bmp)
 File: pic/KT/INL.png Graphic file (type bmp)
 <pic/KT/INL.png>
  [28]
-File: pic/KT/DFT.png Graphic file (type bmp)
-<pic/KT/DFT.png>
-File: pic/KT/DNL.png Graphic file (type bmp)
-<pic/KT/DNL.png>
- [29]
-File: pic/KT/INL.png Graphic file (type bmp)
-<pic/KT/INL.png>
 File: pic/jitter/DFT.png Graphic file (type bmp)
 <pic/jitter/DFT.png>
- [30]
 File: pic/jitter/DNL.png Graphic file (type bmp)
 <pic/jitter/DNL.png>
+ [29]
 File: pic/jitter/INL.png Graphic file (type bmp)
 <pic/jitter/INL.png>
- [31]
 File: pic/noideal/DFT.png Graphic file (type bmp)
 <pic/noideal/DFT.png>
+ [30]
 File: pic/noideal/DNL.png Graphic file (type bmp)
 <pic/noideal/DNL.png>
- [32]
 File: pic/noideal/INL.png Graphic file (type bmp)
 <pic/noideal/INL.png>
- [33] [34]
+ [31] [32]
 File: figure/ti1.png Graphic file (type bmp)
 <figure/ti1.png>
- [35] [36]
+ [33] [34]
 File: figure/ti2.png Graphic file (type bmp)
 <figure/ti2.png>
- [37] (f:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+ [35] (f:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 )
-Overfull \hbox (16.92398pt too wide) in paragraph at lines 1070--1071
+Overfull \hbox (16.92398pt too wide) in paragraph at lines 1047--1048
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (2.46985pt too wide) in paragraph at lines 1082--1083
+Overfull \hbox (2.46985pt too wide) in paragraph at lines 1059--1060
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[38]
-Overfull \hbox (2.46985pt too wide) in paragraph at lines 1088--1089
+[36]
+Overfull \hbox (2.46985pt too wide) in paragraph at lines 1065--1066
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (2.46985pt too wide) in paragraph at lines 1091--1092
+Overfull \hbox (2.46985pt too wide) in paragraph at lines 1068--1069
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1416,42 +1408,42 @@ File: figure/result3.png Graphic file (type bmp)
 <figure/result3.png>
 File: figure/result4.png Graphic file (type bmp)
 <figure/result4.png>
-[39]
+[37]
 File: figure/result5.png Graphic file (type bmp)
 <figure/result5.png>
- [40]
+ [38]
 File: figure/result6.png Graphic file (type bmp)
 <figure/result6.png>
- [41]
+ [39]
 Missing character: There is no ≈ (U+2248) in font [lmroman12-regular]:mapping=tex-text;!
 File: figure/cor1.png Graphic file (type bmp)
 <figure/cor1.png>
-[42]
-Overfull \hbox (45.83224pt too wide) in paragraph at lines 1270--1271
+[40]
+Overfull \hbox (45.83224pt too wide) in paragraph at lines 1247--1248
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (38.60518pt too wide) in paragraph at lines 1272--1273
+Overfull \hbox (38.60518pt too wide) in paragraph at lines 1249--1250
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[43]
+[41]
 File: figure/cor2.png Graphic file (type bmp)
 <figure/cor2.png>
- [44]
+ [42]
 File: figure/cor3.png Graphic file (type bmp)
 <figure/cor3.png>
 File: figure/cor4.png Graphic file (type bmp)
 <figure/cor4.png>
 File: figure/cor6.png Graphic file (type bmp)
 <figure/cor6.png>
- [45]
-Overfull \hbox (40.0703pt too wide) in paragraph at lines 1374--1375
+ [43]
+Overfull \hbox (40.0703pt too wide) in paragraph at lines 1351--1352
 []$[]$ 
  []
 
-[46] [47]
+[44] [45]
 File: figure/feeling1.png Graphic file (type bmp)
 <figure/feeling1.png>
 
@@ -1459,10 +1451,10 @@ Missing character: There is no ′ (U+2032) in font [lmroman12-regular]:mapping=
 Missing character: There is no ​ (U+200B) in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ′ (U+2032) in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ​ (U+200B) in font [lmroman12-regular]:mapping=tex-text;!
-[48]
+[46]
 File: figure/feeling2.png Graphic file (type bmp)
 <figure/feeling2.png>
- [49] [50
+ [47] [48
 
 ] (./ADDA ver1.aux)
  ***********
@@ -1473,19 +1465,16 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `"ADDA ver1".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 36500 strings out of 474773
- 790259 string characters out of 5761289
+ 36491 strings out of 474773
+ 789660 string characters out of 5761289
  1967842 words of memory out of 5000000
- 57965 multiletter control sequences out of 15000+600000
+ 57956 multiletter control sequences out of 15000+600000
  568182 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,13n,97p,1277b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ADDA ver1.pdf (50 pages).
+Output written on ADDA ver1.pdf (48 pages).
