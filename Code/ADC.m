@@ -5,8 +5,8 @@ close all;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% ADC Parameter %%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-N1 = 6;          % stage1 SAR
-N2 = 8;          % stage2 SAR
+N1 = 7;          % stage1 SAR
+N2 = 9;          % stage2 SAR
 N = N1 + N2 - 1; % resolution (one bit redundancy)
 fs = 100e6; % Sample Rate(MHz)
 ts = 1/(fs);
@@ -16,27 +16,30 @@ LSB = Vref/(2^N);
 n_ch = 4; % number of channel
 
 %%%%%%%%%% Mismatch & noise %%%%%%%%%%%
+%Jitter
+jitter = 100e-12; %ps
+
 % Inter-Channel Mismatch
 Mis_OS = 000 * LSB * randn(1,n_ch);       % Inter-channel Offset
 Mis_Gain = 1 + 000 * LSB * randn(1,n_ch); % Inter-channel Gain Mismatch
-Mis_TS = 0.00 * 1/fs * randn(1, n_ch);    % Inter-channel Clock Jitter
+Mis_TS = 000 * 1/fs * randn(1, n_ch);    % Inter-channel Clock Jitter
 
 % SAR Capacitor Mismatch
 sigmaC = 0.00;    % Global Capacitor Mismatch
-Cp_p1  = 005e-15; % Stage1 Positive Plate Parasitic Capacitor (F)
-Cp_n1  = 005e-15; % Stage1 Negative Plate Parasitic Capacitor (F)
-Cp_p2  = 000e-15; % Stage2 Positive Plate Parasitic Capacitor (F)
-Cp_n2  = 000e-15; % Stage2 Negative Plate Parasitic Capacitor (F)
+Cp_p1  = 00e-15; % Stage1 Positive Plate Parasitic Capacitor (F)
+Cp_n1  = 00e-15; % Stage1 Negative Plate Parasitic Capacitor (F)
+Cp_p2  = 00e-15; % Stage2 Positive Plate Parasitic Capacitor (F)
+Cp_n2  = 00e-15; % Stage2 Negative Plate Parasitic Capacitor (F)
 
 % ResAmp Mismatch & noise
 Av         = 120;    % Open-loop Gain (dB)
 GBW        = 10e9;   % Gain-Bandwidth Product (GHz)
-Amp_offset = 000e-3; % Amplifier Offset (V)
+Amp_offset = 00e-3; % Amplifier Offset (V)
 Amp_noise  = 000e-3; % Amplifier RMS Voltage Noise (V)
 
 % SAR Comparator Mismatch & noise
-Comp_offset1 = 000e-3;% Stage1 SAR Comp Offset (V)
-Comp_offset2 = 000e-3;% Stage2 SAR Comp Offset (V)
+Comp_offset1 = 00e-3;% Stage1 SAR Comp Offset (V)
+Comp_offset2 = 00e-3;% Stage2 SAR Comp Offset (V)
 Comp_noise   = 000e-3;% SAR Comp RMS Voltage Noise (V)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -54,7 +57,7 @@ ts_sub = 1 / (fs_sub); % Sub ADC Sample Cycle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%% input signal %%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-num = 2^20;            % Sample Points
+num = 2^22;            % Sample Points
 Nsample = num;         % FFT Points
 Vfs = Vref;            % Input Signal Full Sacle Voltage
 fin = 1431 / num * fs; % Input Signal Freq
@@ -89,7 +92,7 @@ C_tot_n1 = sum(C_act_n1) + Cp_n1; % Positive Plate Total Cap With Parasitic Cap
 
 for i = 1 : n_ch
     % t = ts * [i : n_ch : num]    e.g.[i:4:8]->[[1,5],[2,6],[3,7],[4,8]]
-    t(i,:) = [ts*i : ts_sub : floor(num/n_ch)*ts_sub] + Mis_TS(i).*ones(1,floor(num/n_ch));
+    t(i,:) = [ts*i : ts_sub : floor(num/n_ch)*ts_sub] + Mis_TS(i).*ones(1,floor(num/n_ch)) + jitter * randn(1,floor(num/n_ch));
     t_sam = t(i,:);
     Vin_p_chs(i,:) = Vref/2 + Mis_Gain(i).*(Vfs/2)*sin(2*pi*fin*t_sam) + Mis_OS(i) + sqrt(k*T/C_tot_p1)*randn(1,floor(num/n_ch));
     Vin_n_chs(i,:) = Vref/2 - Mis_Gain(i).*(Vfs/2)*sin(2*pi*fin*t_sam)             + sqrt(k*T/C_tot_n1)*randn(1,floor(num/n_ch));

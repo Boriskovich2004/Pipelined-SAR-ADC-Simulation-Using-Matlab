@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.27)  15 JUN 2025 11:29
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.27)  18 JUN 2025 14:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1012,7 +1012,7 @@ Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 Package ctexhook Warning: Package `CJK' can not be loaded with `xeCJK'.
 
 LaTeX Info: Package 'CJK.sty' has been disabled.
-            Load request ignored on input line 113.
+            Load request ignored on input line 127.
 (f:/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
@@ -1076,82 +1076,82 @@ File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (./ADDA ver1.aux)
 \openout1 = `"ADDA ver1.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 134.
-LaTeX Font Info:    ... okay on input line 134.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup10
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 134.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 134.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 134.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 134.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 134.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 134.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 134.
-LaTeX Font Info:    Redeclaring math accent \check on input line 134.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 134.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 134.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 134.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 134.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 134.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 148.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 148.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 148.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 148.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 148.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 148.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 148.
+LaTeX Font Info:    Redeclaring math accent \check on input line 148.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 148.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 148.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 148.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 148.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 134.
+(Font)              `operators' in the math version `normal' on input line 148.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 134.
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 148.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 134.
+(Font)              `operators' in the math version `bold' on input line 148.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 134.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 148.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 134.
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 148.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 134.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 148.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 134.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 148.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 134.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 148.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 134.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 148.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 134.
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 148.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 134.
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 148.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 134.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 148.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 134.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 148.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1193,7 +1193,7 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 134.
+Package hyperref Info: Link coloring OFF on input line 148.
 (./ADDA ver1.out) (./ADDA ver1.out)
 \@outlinefile=\write4
 \openout4 = `"ADDA ver1.out"'.
@@ -1217,141 +1217,254 @@ Package newfloat Info: `float' package detected.
 
 
 LaTeX Font Warning: Font shape `TU/lmr/bx/sc' undefined
-(Font)              using `TU/lmr/bx/n' instead on input line 179.
+(Font)              using `TU/lmr/bx/n' instead on input line 193.
 
 
 LaTeX Font Warning: Font shape `TU/SimSun(0)/b/sc' undefined
-(Font)              using `TU/SimSun(0)/b/n' instead on input line 179.
-
-Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:mapping=tex-text;!
-Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:mapping=tex-text;!
-File: figure/circuit1.jpg Graphic file (type bmp)
-<figure/circuit1.jpg>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 217.
-(f:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 217.
- (f:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 217.
- (f:/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-
-LaTeX Font Warning: Font shape `TU/SimSun(0)/b/it' undefined
-(Font)              using `TU/SimSun(0)/b/n' instead on input line 223.
+(Font)              using `TU/SimSun(0)/b/n' instead on input line 193.
 
 [1
 
-]
+] (./ADDA ver1.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (f:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (f:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 3.
+ (f:/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+) [2])
+\tf@toc=\write5
+\openout5 = `"ADDA ver1.toc"'.
+
+ [3]
+Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ≥ (U+2265) in font [lmroman12-regular]:mapping=tex-text;!
+[4]
+File: figure/circuit1.jpg Graphic file (type bmp)
+<figure/circuit1.jpg>
+
+
+LaTeX Font Warning: Font shape `TU/SimSun(0)/b/it' undefined
+(Font)              using `TU/SimSun(0)/b/n' instead on input line 247.
+
 File: figure/circuit2.jpg Graphic file (type bmp)
 <figure/circuit2.jpg>
- [2]
+[5]
 File: figure/circuit3.png Graphic file (type bmp)
 <figure/circuit3.png>
- [3]
-Overfull \hbox (16.87532pt too wide) detected at line 328
+ [6] [7]
+Overfull \hbox (16.87532pt too wide) detected at line 352
 [][][][]
  []
 
 
-Overfull \hbox (40.05408pt too wide) in paragraph at lines 348--356
-[]  
+Overfull \hbox (40.05408pt too wide) in paragraph at lines 374--382
+[][] 
  []
 
-[4] [5] [6]
+[8]
+File: figure/cap.png Graphic file (type bmp)
+<figure/cap.png>
+ [9]
+File: figure/diff.png Graphic file (type bmp)
+<figure/diff.png>
+ [10] [11] [12] [13]
 File: pic/ideal/DFT.png Graphic file (type bmp)
 <pic/ideal/DFT.png>
 File: pic/ideal/DNL.png Graphic file (type bmp)
 <pic/ideal/DNL.png>
- [7]
+ [14]
 File: pic/ideal/INL.png Graphic file (type bmp)
 <pic/ideal/INL.png>
 File: pic/ideal/inout.png Graphic file (type bmp)
 <pic/ideal/inout.png>
- [8]
+ [15]
 File: pic/TIOS/DFT.png Graphic file (type bmp)
 <pic/TIOS/DFT.png>
 File: pic/TIOS/DNL.png Graphic file (type bmp)
 <pic/TIOS/DNL.png>
 File: pic/TIOS/INL.png Graphic file (type bmp)
 <pic/TIOS/INL.png>
- [9]
+ [16]
 File: pic/TIG/DFT.png Graphic file (type bmp)
 <pic/TIG/DFT.png>
 File: pic/TIG/DNL.png Graphic file (type bmp)
 <pic/TIG/DNL.png>
+ [17]
 File: pic/TIG/INL.png Graphic file (type bmp)
 <pic/TIG/INL.png>
- [10]
 File: pic/TIC/DFT.png Graphic file (type bmp)
 <pic/TIC/DFT.png>
+ [18]
 File: pic/TIC/DNL.png Graphic file (type bmp)
 <pic/TIC/DNL.png>
 File: pic/TIC/INL.png Graphic file (type bmp)
 <pic/TIC/INL.png>
- [11]
+ [19]
 File: pic/Av/DFT.png Graphic file (type bmp)
 <pic/Av/DFT.png>
 File: pic/Av/DNL.png Graphic file (type bmp)
 <pic/Av/DNL.png>
- [12]
 File: pic/Av/INL.png Graphic file (type bmp)
 <pic/Av/INL.png>
+ [20]
 File: pic/GBW/DFT.png Graphic file (type bmp)
 <pic/GBW/DFT.png>
- [13]
 File: pic/GBW/DNL.png Graphic file (type bmp)
 <pic/GBW/DNL.png>
+ [21]
 File: pic/GBW/INL.png Graphic file (type bmp)
 <pic/GBW/INL.png>
 File: pic/Avno/DFT.png Graphic file (type bmp)
 <pic/Avno/DFT.png>
- [14]
+ [22]
 File: pic/Avno/DNL.png Graphic file (type bmp)
 <pic/Avno/DNL.png>
 File: pic/Avno/INL.png Graphic file (type bmp)
 <pic/Avno/INL.png>
- [15]
+ [23]
 File: pic/Comno/DFT.png Graphic file (type bmp)
 <pic/Comno/DFT.png>
 File: pic/Comno/DNL.png Graphic file (type bmp)
 <pic/Comno/DNL.png>
- [16]
 File: pic/Comno/INL.png Graphic file (type bmp)
 <pic/Comno/INL.png>
+ [24]
 File: pic/Co/DFT1.png Graphic file (type bmp)
 <pic/Co/DFT1.png>
 File: pic/Co/DNL1.png Graphic file (type bmp)
 <pic/Co/DNL1.png>
- [17]
+ [25]
 File: pic/Co/INL1.png Graphic file (type bmp)
 <pic/Co/INL1.png>
 File: pic/Co/DFT2.png Graphic file (type bmp)
 <pic/Co/DFT2.png>
+ [26]
 File: pic/Co/DNL2.png Graphic file (type bmp)
 <pic/Co/DNL2.png>
- [18]
 File: pic/Co/INL2.png Graphic file (type bmp)
 <pic/Co/INL2.png>
+ [27]
 File: pic/KT/DFT.png Graphic file (type bmp)
 <pic/KT/DFT.png>
 File: pic/KT/DNL.png Graphic file (type bmp)
 <pic/KT/DNL.png>
- [19]
 File: pic/KT/INL.png Graphic file (type bmp)
 <pic/KT/INL.png>
+ [28]
+File: pic/KT/DFT.png Graphic file (type bmp)
+<pic/KT/DFT.png>
+File: pic/KT/DNL.png Graphic file (type bmp)
+<pic/KT/DNL.png>
+ [29]
+File: pic/KT/INL.png Graphic file (type bmp)
+<pic/KT/INL.png>
+File: pic/jitter/DFT.png Graphic file (type bmp)
+<pic/jitter/DFT.png>
+ [30]
+File: pic/jitter/DNL.png Graphic file (type bmp)
+<pic/jitter/DNL.png>
+File: pic/jitter/INL.png Graphic file (type bmp)
+<pic/jitter/INL.png>
+ [31]
 File: pic/noideal/DFT.png Graphic file (type bmp)
 <pic/noideal/DFT.png>
- [20]
 File: pic/noideal/DNL.png Graphic file (type bmp)
 <pic/noideal/DNL.png>
+ [32]
 File: pic/noideal/INL.png Graphic file (type bmp)
 <pic/noideal/INL.png>
- [21] (./ADDA ver1.aux)
+ [33] [34]
+File: figure/ti1.png Graphic file (type bmp)
+<figure/ti1.png>
+ [35] [36]
+File: figure/ti2.png Graphic file (type bmp)
+<figure/ti2.png>
+ [37] (f:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/02/21 1.10 listings language file
+)
+Overfull \hbox (16.92398pt too wide) in paragraph at lines 1070--1071
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (2.46985pt too wide) in paragraph at lines 1082--1083
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[38]
+Overfull \hbox (2.46985pt too wide) in paragraph at lines 1088--1089
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (2.46985pt too wide) in paragraph at lines 1091--1092
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+File: figure/result1.png Graphic file (type bmp)
+<figure/result1.png>
+File: figure/result2.png Graphic file (type bmp)
+<figure/result2.png>
+File: figure/result3.png Graphic file (type bmp)
+<figure/result3.png>
+File: figure/result4.png Graphic file (type bmp)
+<figure/result4.png>
+[39]
+File: figure/result5.png Graphic file (type bmp)
+<figure/result5.png>
+ [40]
+File: figure/result6.png Graphic file (type bmp)
+<figure/result6.png>
+ [41]
+Missing character: There is no ≈ (U+2248) in font [lmroman12-regular]:mapping=tex-text;!
+File: figure/cor1.png Graphic file (type bmp)
+<figure/cor1.png>
+[42]
+Overfull \hbox (45.83224pt too wide) in paragraph at lines 1270--1271
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (38.60518pt too wide) in paragraph at lines 1272--1273
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[43]
+File: figure/cor2.png Graphic file (type bmp)
+<figure/cor2.png>
+ [44]
+File: figure/cor3.png Graphic file (type bmp)
+<figure/cor3.png>
+File: figure/cor4.png Graphic file (type bmp)
+<figure/cor4.png>
+File: figure/cor6.png Graphic file (type bmp)
+<figure/cor6.png>
+ [45]
+Overfull \hbox (40.0703pt too wide) in paragraph at lines 1374--1375
+[]$[]$ 
+ []
+
+[46] [47]
+File: figure/feeling1.png Graphic file (type bmp)
+<figure/feeling1.png>
+
+Missing character: There is no ′ (U+2032) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ (U+200B) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ′ (U+2032) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ​ (U+200B) in font [lmroman12-regular]:mapping=tex-text;!
+[48]
+File: figure/feeling2.png Graphic file (type bmp)
+<figure/feeling2.png>
+ [49] [50
+
+] (./ADDA ver1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -1360,16 +1473,19 @@ L3 programming layer <2022/08/05>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `"ADDA ver1".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 35566 strings out of 474773
- 772663 string characters out of 5761289
- 1943842 words of memory out of 5000000
- 57056 multiletter control sequences out of 15000+600000
- 568174 words of font info for 94 fonts, out of 8000000 for 9000
+ 36500 strings out of 474773
+ 790259 string characters out of 5761289
+ 1967842 words of memory out of 5000000
+ 57965 multiletter control sequences out of 15000+600000
+ 568182 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,12n,97p,1277b,523s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,13n,97p,1277b,2359s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on ADDA ver1.pdf (21 pages).
+Output written on ADDA ver1.pdf (50 pages).
